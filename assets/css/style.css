@@ -416,3 +416,4 @@ dialog::backdrop { background:#102e29a6; backdrop-filter:blur(4px); }
     html { scroll-behavior:auto; }
     *,*::before,*::after { animation:none !important; transition:none !important; }
 }
+`r`n#slider-pause{display:none!important;}
