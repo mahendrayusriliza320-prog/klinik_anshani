@@ -1,0 +1,3 @@
+<?php $pageTitle = 'Layanan'; require __DIR__ . '/includes/header.php'; page_intro('Layanan', 'Pilihan layanan untuk Anda.', 'Pelajari layanan yang tersedia, lihat rincian harga, dan konsultasikan kebutuhan Anda dengan klinik.'); ?>
+<section class="section"><div class="container"><?php render_category_cards(); ?><div class="notice"><?= icon('shield') ?><p>Pilihan layanan di website merupakan permintaan informasi atau konsultasi. Jenis pemeriksaan dan tindakan disesuaikan dengan penilaian tenaga kesehatan.</p></div></div></section>
+<?php render_cta(); require __DIR__ . '/includes/footer.php'; ?>
