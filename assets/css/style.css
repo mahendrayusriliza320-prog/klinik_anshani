@@ -1,4 +1,4 @@
-/* Klinik Anshani — satu stylesheet, tanpa framework / proses build. */
+/* Klinik Anshani â€” satu stylesheet, tanpa framework / proses build. */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root { --ink:#173d39; --text:#405853; --muted:#63756f; --teal:#126d64; --teal-dark:#0c514a; --soft:#eaf3ef; --surface:#f6f9f7; --line:#dce5e0; --white:#fff; --radius:16px; --shadow:0 8px 30px #173d3908; }
@@ -416,4 +416,6 @@ dialog::backdrop { background:#102e29a6; backdrop-filter:blur(4px); }
     html { scroll-behavior:auto; }
     *,*::before,*::after { animation:none !important; transition:none !important; }
 }
-`r`n#slider-pause{display:none!important;}
+#slider-pause{display:none!important;}
+.hero-slide:has(.hero-background) .hero-copy{visibility:hidden;pointer-events:none;}
+.hero-slide:has(.hero-background)::after{background:transparent!important;}
