@@ -39,11 +39,41 @@ function render_prices(bool $preview = false): void {
 
 function render_gallery(): void {
     global $gallery; ?>
-    <div class="gallery-grid" aria-label="Galeri foto klinik; geser untuk melihat foto lain di ponsel">
-        <?php foreach ($gallery as $i => $item): $exists = asset_exists($item['image']); ?>
-        <button type="button" class="gallery-card" data-gallery="<?= $i ?>" data-src="<?= e(photo_source($item['image'])) ?>" data-title="<?= e($item['title']) ?>" data-placeholder="<?= $exists ? 'false' : 'true' ?>" aria-label="Perbesar <?= e($item['title']) ?>"><img src="<?= e(photo_source($item['image'])) ?>" alt="<?= e($exists ? $item['alt'] : 'Placeholder ' . $item['title']) ?>" loading="lazy" width="720" height="540"><?php if (!$exists): ?><span class="placeholder-caption"><?= icon('photo') ?><span><?= e($item['title']) ?></span><small>Foto akan segera ditambahkan</small></span><?php endif; ?><span class="gallery-caption"><?= e($item['title']) ?><span aria-hidden="true">↗</span></span></button>
+    
+    <div class="gallery-grid" aria-label="Galeri foto Klinik Anshani">
+        <?php foreach ($gallery as $i => $item): 
+            $exists = asset_exists($item['image']); 
+        ?>
+        
+        <button
+            type="button"
+            class="gallery-card"
+            data-gallery="<?= $i ?>"
+            data-src="<?= e(photo_source($item['image'])) ?>"
+            data-title=""
+            data-placeholder="<?= $exists ? 'false' : 'true' ?>"
+            aria-label="Perbesar foto Klinik Anshani"
+        >
+            <img
+                src="<?= e(photo_source($item['image'])) ?>"
+                alt="Foto Klinik Anshani"
+                loading="lazy"
+                width="720"
+                height="540"
+            >
+
+            <?php if (!$exists): ?>
+                <span class="placeholder-caption">
+                    <?= icon('photo') ?>
+                    <small>Foto akan segera ditambahkan</small>
+                </span>
+            <?php endif; ?>
+
+        </button>
+
         <?php endforeach; ?>
     </div>
+
 <?php }
 
 function render_videos(): void {
