@@ -1,4 +1,4 @@
-/* Klinik Anshani Ã¢â‚¬â€ Vanilla JavaScript. Tidak ada penyimpanan data pasien. */
+/* Klinik Anshani ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Vanilla JavaScript. Tidak ada penyimpanan data pasien. */
 (() => {
     'use strict';
     const $ = (selector, root = document) => root.querySelector(selector);
@@ -103,14 +103,7 @@
         let paused = false;
         let hovered = false;
         let focused = false;
-        let timer;
-        const pauseButton = $('#slider-pause');
-        function updatePauseButton() {
-            pauseButton.textContent = paused ? 'Ã¢â€“Â·' : 'Ã¢â€¦Â¡';
-            pauseButton.setAttribute('aria-label', paused ? 'Lanjutkan pergantian banner' : 'Jeda pergantian banner');
-            pauseButton.setAttribute('aria-pressed', String(paused));
-        }
-        function showSlide(index) {
+        let timer;function showSlide(index) {
             current = (index + slides.length) % slides.length;
             slides.forEach((slide, i) => { slide.hidden = i !== current; });
             dots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === current)));
@@ -126,7 +119,6 @@
         $('#slider-next').addEventListener('click', () => step(1));
         $('#slider-prev').addEventListener('click', () => step(-1));
         dots.forEach((dot, i) => dot.addEventListener('click', () => { showSlide(i); restartTimer(); }));
-        pauseButton.addEventListener('click', () => { paused = !paused; updatePauseButton(); restartTimer(); });
         hero.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') hovered = true; });
         hero.addEventListener('pointerleave', () => { hovered = false; restartTimer(); });
         hero.addEventListener('focusin', () => { focused = true; });
@@ -148,7 +140,6 @@
             touchStarted = false;
         }, { passive: true });
         hero.addEventListener('touchcancel', () => { touchStarted = false; });
-        updatePauseButton();
         restartTimer();
     }
 
@@ -165,7 +156,7 @@
         $('#lightbox-title').textContent = photo.dataset.title;
         $('#photo-count').textContent = (photoIndex + 1) + ' / ' + photos.length;
         $('#lightbox-placeholder').hidden = photo.dataset.placeholder !== 'true';
-        $('#lightbox-placeholder').textContent = photo.dataset.title + ' Ã¢â‚¬â€ foto akan segera ditambahkan';
+        $('#lightbox-placeholder').textContent = photo.dataset.title + ' ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â foto akan segera ditambahkan';
     }
     photos.forEach((photo, index) => photo.addEventListener('click', () => { showPhoto(index); openDialog(lightbox, photo); }));
     $('#photo-prev')?.addEventListener('click', () => showPhoto(photoIndex - 1));
@@ -233,7 +224,7 @@
             }
             if (!name) invalid(nameInput, 'Nama lengkap wajib diisi.');
             if (!phone) invalid(phoneInput, 'Nomor WhatsApp wajib diisi.');
-            else if (!/^\+?\d{9,15}$/.test(normalizedPhone)) invalid(phoneInput, 'Masukkan nomor WhatsApp yang valid (9Ã¢â‚¬â€œ15 digit).');
+            else if (!/^\+?\d{9,15}$/.test(normalizedPhone)) invalid(phoneInput, 'Masukkan nomor WhatsApp yang valid (9ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“15 digit).');
             if (!serviceInput.value) invalid(serviceInput, 'Silakan pilih layanan terlebih dahulu.');
             if (dateInput.value && dateInput.value < localDate()) invalid(dateInput, 'Pilih tanggal hari ini atau setelahnya.');
             if (errors.length) {
@@ -242,7 +233,7 @@
                 return;
             }
             const selectedText = serviceInput.selectedOptions[0].textContent;
-            const priceSeparator = selectedText.lastIndexOf(' Ã¢â‚¬â€ ');
+            const priceSeparator = selectedText.lastIndexOf(' ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ');
             const service = priceSeparator >= 0 ? selectedText.slice(0, priceSeparator) : selectedText;
             const date = dateInput.value ? dateInput.value.split('-').reverse().join('/') : 'Belum ditentukan';
             const time = $('[name="time"]', form).value || 'Belum ditentukan';
