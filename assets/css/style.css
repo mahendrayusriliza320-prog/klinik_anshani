@@ -419,3 +419,36 @@ dialog::backdrop { background:#102e29a6; backdrop-filter:blur(4px); }
 #slider-pause{display:none!important;}
 .hero-slide:has(.hero-background) .hero-copy{visibility:hidden;pointer-events:none;}
 .hero-slide:has(.hero-background)::after{background:transparent!important;}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo-image {
+    display: block;
+    width: auto;
+    height: 80px;
+    max-width: 330px;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .brand-logo-image {
+        height: 46px;
+        max-width: 210px;
+    }
+}
+
+.footer-logo-image {
+    display: block;
+    width: auto;
+    height: 80px;
+    max-width: 330px;
+    object-fit: contain;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+}

@@ -1,7 +1,17 @@
 </main>
 <footer class="site-footer"><div class="container">
     <div class="footer-grid">
-        <div><a class="brand footer-brand" href="index.php"><span class="brand-mark"><?= icon('cross') ?></span><span>Klinik <strong>Anshani</strong></span></a><p>Pelayanan kesehatan yang mengutamakan kenyamanan, privasi, dan kemudahan akses.</p></div>
+        <div>
+    <a class="brand footer-brand footer-logo" href="index.php" aria-label="Klinik Anshani - Home">
+        <img
+            src="assets/images/logo-klinik-anshani.png"
+            alt="Klinik Anshani"
+            class="footer-logo-image"
+        >
+    </a>
+
+    <p>Pelayanan kesehatan yang mengutamakan kenyamanan, privasi, dan kemudahan akses.</p>
+</div>
         <nav aria-label="Menu cepat footer"><h2>Menu cepat</h2><ul><?php foreach ($navigation as $path => $label): ?><li><a href="<?= e($path) ?>"><?= e($label) ?></a></li><?php endforeach; ?></ul></nav>
         <div><h2>Kontak</h2><p>Informasi layanan dan jadwal kunjungan</p><a class="footer-wa" href="https://wa.me/<?= e($clinic['whatsapp_number']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('chat') ?><span>WhatsApp<strong><?= e($clinic['whatsapp_display']) ?></strong></span><?= icon('arrow') ?></a></div>
     </div>
