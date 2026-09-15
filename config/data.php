@@ -8,7 +8,7 @@ $clinic = [
     'whatsapp_display' => '083114969136',
     'whatsapp_number' => '6283114969136',
     'address' => 'Alamat Klinik Anshani',
-    'opening_hours' => 'SeninÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Minggu | 08.00ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“21.00',
+    'opening_hours' => 'Senin-Minggu | 08.00-21.00',
     'location_is_placeholder' => true, // Ubah false setelah alamat dan jam dikonfirmasi.
     'maps_embed' => 'GOOGLE_MAP_EMBED_URL', // Google Maps > Bagikan > Sematkan peta > salin nilai src.
     'maps_link' => 'https://www.google.com/maps/search/?api=1&query=Klinik%20Anshani',
@@ -81,8 +81,8 @@ $priceGroups = [
         ['pcr-hpv', 'PCR HPV', 800000, 'Vagina / uretra'],
         ['pcr-12', 'PCR Urin Uretra / Swab Vagina 12 Penyakit', 2400000],
         ['vdrl-express', 'VDRL Express', 440000, 'Estimasi hasil hari yang sama, konfirmasi klinik.'],
-        ['vdrl', 'VDRL', 300000, 'Estimasi hasil 1ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“3 hari'],
-        ['tpha', 'TPHA', 300000, 'Estimasi hasil 1ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“3 hari'],
+        ['vdrl', 'VDRL', 300000, 'Estimasi hasil 1-3 hari'],
+        ['tpha', 'TPHA', 300000, 'Estimasi hasil 1-3 hari'],
         ['pcr-hiv-rna', 'PCR HIV RNA', 1800000, 'Referensi menyebut hasil 12 jam; konfirmasi ketersediaan.'],
     ],
     'pengobatan-ims' => [
@@ -95,21 +95,21 @@ $priceGroups = [
     'sunat-modern' => [['sunat-anak', 'Sunat Modern Anak', 1500000], ['sunat-dewasa', 'Sunat Modern Dewasa', 1700000]],
     'suntik-vitamin' => [
         ['suntik-c', 'Suntik Vitamin C 1000 mg', 100000],
-        ['suntik-b3', 'Suntik B Kompleks ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 3 Vitamin', 80000, 'B1, B6, B12'],
-        ['suntik-b6', 'Suntik B Kompleks ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 6 Vitamin', 140000, 'B1, B2, B3, B5, B6, B12'],
+        ['suntik-b3', 'Suntik B Kompleks - 3 Vitamin', 80000, 'B1, B6, B12'],
+        ['suntik-b6', 'Suntik B Kompleks - 6 Vitamin', 140000, 'B1, B2, B3, B5, B6, B12'],
         ['suntik-c-b', 'Suntik Vitamin C 1000 mg + B Kompleks', 140000, 'B1, B6, B12'],
     ],
     'infus-vitamin' => [],
     'infus-penyakit' => [
-        ['vertigo-1', 'Infus Vertigo ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Tanpa Mual / Muntah', 400000],
-        ['vertigo-2', 'Infus Vertigo ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Disertai Mual', 445000],
-        ['vertigo-3', 'Infus Vertigo ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Muntah Hebat & Lemas', 780000],
-        ['hamil-muntah', 'Infus Ibu Hamil ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Muntah Hebat', 589000],
+        ['vertigo-1', 'Infus Vertigo - Tanpa Mual / Muntah', 400000],
+        ['vertigo-2', 'Infus Vertigo - Disertai Mual', 445000],
+        ['vertigo-3', 'Infus Vertigo - Muntah Hebat & Lemas', 780000],
+        ['hamil-muntah', 'Infus Ibu Hamil - Muntah Hebat', 589000],
         ['lambung-ringan', 'Infus Lambung Ringan', 400000],
-        ['lambung-berat', 'Infus Lambung SedangÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Berat', 630000],
-        ['kolik-1', 'Infus Nyeri Perut Kolik ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Tanpa Mual', 300000],
-        ['kolik-2', 'Infus Nyeri Perut Kolik ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Muntah & Demam', 780000],
-        ['diare-1', 'Infus Diare ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Tanpa Mual', 506000],
+        ['lambung-berat', 'Infus Lambung Sedang-Berat', 630000],
+        ['kolik-1', 'Infus Nyeri Perut Kolik - Tanpa Mual', 300000],
+        ['kolik-2', 'Infus Nyeri Perut Kolik - Muntah & Demam', 780000],
+        ['diare-1', 'Infus Diare - Tanpa Mual', 506000],
         ['diare-2', 'Infus Diare & Muntah', 561000],
         ['nyeri-kaki', 'Infus Nyeri Kaki', 308000],
     ],
@@ -127,7 +127,7 @@ $infusionOptions = [
 ];
 foreach ([100 => 2, 500 => 3] as $volume => $column) {
     foreach ($infusionOptions as $option) {
-        $priceGroups['infus-vitamin'][] = ['infus-' . $option[0] . '-' . $volume, 'Infus ' . $option[1] . ' ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ' . $volume . ' ml', $option[$column]];
+        $priceGroups['infus-vitamin'][] = ['infus-' . $option[0] . '-' . $volume, 'Infus ' . $option[1] . ' - ' . $volume . ' ml', $option[$column]];
     }
 }
 $services = [];

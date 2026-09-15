@@ -1,4 +1,4 @@
-/* Klinik Anshani ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Vanilla JavaScript. Tidak ada penyimpanan data pasien. */
+/* Klinik Anshani - Vanilla JavaScript. Tidak ada penyimpanan data pasien. */
 (() => {
     'use strict';
     const $ = (selector, root = document) => root.querySelector(selector);
@@ -156,7 +156,7 @@
         $('#lightbox-title').textContent = photo.dataset.title;
         $('#photo-count').textContent = (photoIndex + 1) + ' / ' + photos.length;
         $('#lightbox-placeholder').hidden = photo.dataset.placeholder !== 'true';
-        $('#lightbox-placeholder').textContent = photo.dataset.title + ' ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â foto akan segera ditambahkan';
+        $('#lightbox-placeholder').textContent = photo.dataset.title + ' - foto akan segera ditambahkan';
     }
     photos.forEach((photo, index) => photo.addEventListener('click', () => { showPhoto(index); openDialog(lightbox, photo); }));
     $('#photo-prev')?.addEventListener('click', () => showPhoto(photoIndex - 1));
@@ -224,7 +224,7 @@
             }
             if (!name) invalid(nameInput, 'Nama lengkap wajib diisi.');
             if (!phone) invalid(phoneInput, 'Nomor WhatsApp wajib diisi.');
-            else if (!/^\+?\d{9,15}$/.test(normalizedPhone)) invalid(phoneInput, 'Masukkan nomor WhatsApp yang valid (9ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“15 digit).');
+            else if (!/^\+?\d{9,15}$/.test(normalizedPhone)) invalid(phoneInput, 'Masukkan nomor WhatsApp yang valid (9-15 digit).');
             if (!serviceInput.value) invalid(serviceInput, 'Silakan pilih layanan terlebih dahulu.');
             if (dateInput.value && dateInput.value < localDate()) invalid(dateInput, 'Pilih tanggal hari ini atau setelahnya.');
             if (errors.length) {
@@ -233,7 +233,7 @@
                 return;
             }
             const selectedText = serviceInput.selectedOptions[0].textContent;
-            const priceSeparator = selectedText.lastIndexOf(' ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ');
+            const priceSeparator = selectedText.lastIndexOf(' - ');
             const service = priceSeparator >= 0 ? selectedText.slice(0, priceSeparator) : selectedText;
             const date = dateInput.value ? dateInput.value.split('-').reverse().join('/') : 'Belum ditentukan';
             const time = $('[name="time"]', form).value || 'Belum ditentukan';
