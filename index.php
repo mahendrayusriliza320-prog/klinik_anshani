@@ -12,14 +12,165 @@
     </div>
     <div class="container hero-controls"><div class="hero-pagination" aria-label="Pilih banner"><?php foreach ($banners as $i => $_): ?><button type="button" class="slider-dot" data-slide="<?= $i ?>" aria-label="Tampilkan banner <?= $i + 1 ?>" aria-pressed="<?= $i === 0 ? 'true' : 'false' ?>"></button><?php endforeach; ?></div><span class="slide-number" aria-live="off">01 / 03</span><div class="slider-buttons"><button class="icon-button" id="slider-prev" type="button" aria-label="Banner sebelumnya">&larr;</button><button class="icon-button" id="slider-next" type="button" aria-label="Banner berikutnya">&rarr;</button></div></div>
 </section>
-<div class="quick-strip container"><a href="layanan.php"><?= icon('lab') ?><span>Temukan layanan<strong>Pemeriksaan & perawatan</strong></span><?= icon('arrow') ?></a><a href="pricelist.php"><?= icon('price') ?><span>Informasi biaya<strong>Lihat pricelist lengkap</strong></span><?= icon('arrow') ?></a><a href="kontak.php"><?= icon('chat') ?><span>Hubungi kami<strong><?= e($clinic['whatsapp_display']) ?></strong></span><?= icon('arrow') ?></a></div>
-<section class="section"><div class="container intro-grid"><div><p class="eyebrow">TENTANG KLINIK ANSHANI</p><h2>Pelayanan yang dekat.<br>Perhatian yang personal.</h2></div><div><p class="intro-text"><?= e($about['intro']) ?></p><a class="text-link" href="tentang.php">Kenali Klinik Anshani <?= icon('arrow') ?></a></div></div></section>
-<section class="section section-tint"><div class="container"><?php section_heading('LAYANAN KAMI', 'Temukan layanan yang Anda butuhkan', 'Pilihan layanan untuk membantu Anda merencanakan langkah berikutnya.', 'layanan.php', 'Semua layanan'); render_category_cards(6); ?></div></section>
-<section class="section"><div class="container"><?php section_heading('INFORMASI BIAYA', 'Rencanakan layanan, ketahui biayanya.', 'Harga referensi. Konfirmasikan biaya dan ketersediaan sebelum kunjungan.', 'pricelist.php', 'Pricelist lengkap'); render_prices(true); ?></div></section>
-<section class="section section-tint"><div class="container"><?php section_heading('RUANG & SUASANA', 'Galeri Klinik', 'Kenali suasana klinik sebelum kunjungan Anda.', 'galeri.php', 'Lihat galeri'); render_gallery(); ?></div></section>
-<section class="section"><div class="container"><?php section_heading('LEBIH DEKAT DENGAN KAMI', 'Video Klinik', 'Dokumentasi klinik akan tersedia di sini.'); render_videos(); ?></div></section>
-<section class="section section-tint"><div class="container"><?php section_heading('KENYAMANAN DALAM PELAYANAN', 'Kenapa Memilih Klinik Anshani?'); render_advantages(); ?></div></section>
-<section class="section"><div class="container"><?php section_heading('LANGKAH SEDERHANA', 'Cara Daftar', 'Dari memilih layanan hingga mengonfirmasi kunjungan.'); ?><ol class="steps"><?php foreach ($steps as $i => $step): ?><li><span>0<?= $i + 1 ?></span><h3><?= e($step) ?></h3></li><?php endforeach; ?></ol></div></section>
-<section class="section section-tint" id="pendaftaran"><div class="container booking-layout"><div><p class="eyebrow">MULAI DARI SINI</p><h2>Mari rencanakan<br>kunjungan Anda.</h2><p>Pilih layanan dan waktu yang Anda inginkan. Tim klinik akan membantu mengonfirmasi melalui WhatsApp.</p><div class="booking-callout"><?= icon('chat') ?><span>Butuh bantuan memilih layanan?<a href="https://wa.me/<?= e($clinic['whatsapp_number']) ?>" target="_blank" rel="noopener noreferrer"><?= e($clinic['whatsapp_display']) ?></a></span></div></div><div class="form-card"><h3>Form Pemilihan Layanan</h3><?php render_booking_form('home'); ?></div></div></section>
-<section class="section"><div class="container"><?php section_heading('GAMBARAN PENGALAMAN', 'Contoh Testimonial', 'Data ilustrasi sementara, bukan ulasan pasien asli.'); ?><div class="testimonial-grid"><?php foreach ($testimonials as $item): ?><figure class="testimonial"><blockquote><?= e($item['quote']) ?></blockquote><figcaption><?= e($item['name']) ?><span>Contoh testimonial</span></figcaption></figure><?php endforeach; ?></div></div></section>
+<div class="quick-strip container">
+    <a href="layanan.php">
+        <?= icon('lab') ?>
+        <span>Layanan kesehatan<strong>Lihat layanan kami</strong></span>
+        <?= icon('arrow') ?>
+    </a>
+    <a href="pricelist.php">
+        <?= icon('price') ?>
+        <span>Informasi biaya<strong>Lihat pricelist lengkap</strong></span>
+        <?= icon('arrow') ?>
+    </a>
+    <a href="kontak.php">
+        <?= icon('chat') ?>
+        <span>Reservasi & konsultasi<strong><?= e($clinic['whatsapp_display']) ?></strong></span>
+        <?= icon('arrow') ?>
+    </a>
+</div>
+
+<section class="section">
+    <div class="container intro-grid">
+        <div>
+            <p class="eyebrow">TENTANG KLINIK ANSHANI</p>
+            <h2>Pelayanan kesehatan<br>untuk Anda dan keluarga.</h2>
+        </div>
+        <div>
+            <p class="intro-text">
+                Klinik Anshani hadir untuk memberikan pelayanan kesehatan yang nyaman,
+                mudah diakses, dan sesuai dengan kebutuhan Anda. Kami menyediakan
+                berbagai layanan pemeriksaan, konsultasi, dan perawatan kesehatan.
+            </p>
+            <a class="text-link" href="tentang.php">
+                Kenali Klinik Anshani <?= icon('arrow') ?>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section section-tint">
+    <div class="container">
+        <?php
+        section_heading(
+            'LAYANAN KAMI',
+            'Layanan kesehatan sesuai kebutuhan Anda',
+            'Temukan berbagai pilihan pemeriksaan, konsultasi, dan pelayanan kesehatan di Klinik Anshani.',
+            'layanan.php',
+            'Lihat semua layanan'
+        );
+        render_category_cards(6);
+        ?>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <?php
+        section_heading(
+            'INFORMASI BIAYA',
+            'Informasi layanan dan biaya',
+            'Lihat informasi biaya layanan untuk membantu Anda mempersiapkan kunjungan ke Klinik Anshani.',
+            'pricelist.php',
+            'Lihat pricelist'
+        );
+        render_prices(true);
+        ?>
+    </div>
+</section>
+
+<section class="section section-tint">
+    <div class="container">
+        <?php
+        section_heading(
+            'KLINIK ANSHANI',
+            'Galeri Klinik',
+            'Lihat fasilitas dan suasana Klinik Anshani sebelum Anda berkunjung.',
+            'galeri.php',
+            'Lihat galeri'
+        );
+        render_gallery();
+        ?>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <?php
+        section_heading(
+            'MENGENAL KLINIK ANSHANI',
+            'Video Klinik',
+            'Kenali lebih dekat Klinik Anshani melalui dokumentasi kegiatan dan pelayanan kami.'
+        );
+        render_videos();
+        ?>
+    </div>
+</section>
+
+<section class="section section-tint">
+    <div class="container">
+        <?php
+        section_heading(
+            'PELAYANAN KAMI',
+            'Mengapa Memilih Klinik Anshani?',
+            'Kami berupaya memberikan pelayanan kesehatan yang nyaman dan mudah bagi setiap pasien.'
+        );
+        render_advantages();
+        ?>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <?php
+        section_heading(
+            'RESERVASI & KONSULTASI',
+            'Cara Daftar',
+            'Ikuti langkah sederhana berikut untuk merencanakan kunjungan Anda.'
+        );
+        ?>
+
+        <ol class="steps">
+            <?php foreach ($steps as $i => $step): ?>
+                <li>
+                    <span>0<?= $i + 1 ?></span>
+                    <h3><?= e($step) ?></h3>
+                </li>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+</section>
+
+<section class="section section-tint" id="pendaftaran">
+    <div class="container booking-layout">
+        <div>
+            <p class="eyebrow">RESERVASI KLINIK</p>
+            <h2>Rencanakan<br>kunjungan Anda.</h2>
+
+            <p>
+                Pilih layanan dan waktu kunjungan yang Anda inginkan.
+                Tim Klinik Anshani akan membantu mengonfirmasi jadwal melalui WhatsApp.
+            </p>
+
+            <div class="booking-callout">
+                <?= icon('chat') ?>
+                <span>
+                    Butuh informasi atau ingin konsultasi?
+                    <a
+                        href="https://wa.me/<?= e($clinic['whatsapp_number']) ?>?text=<?= urlencode('Halo Klinik Anshani, saya ingin konsultasi.') ?>"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp <?= e($clinic['whatsapp_display']) ?>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <h3>Form Reservasi & Konsultasi</h3>
+            <?php render_booking_form('home'); ?>
+        </div>
+    </div>
+</section>
 <?php render_location(); render_cta(); require __DIR__ . '/includes/footer.php'; ?>

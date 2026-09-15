@@ -81,19 +81,73 @@ function render_booking_form(string $prefix): void {
 
 function render_location(): void {
     global $clinic;
-    $isMapPlaceholder = $clinic['maps_embed'] === 'GOOGLE_MAP_EMBED_URL' || $clinic['maps_embed'] === '';
-    $mapUrl = $isMapPlaceholder ? $clinic['maps_fallback'] : $clinic['maps_embed']; ?>
-    <section class="section" id="lokasi"><div class="container">
-        <?php section_heading('TEMUKAN KAMI', 'Lokasi Klinik Anshani', 'Rencanakan kunjungan Anda. Hubungi kami untuk petunjuk lokasi dan konfirmasi jadwal.'); ?>
-        <div class="location-info">
-            <div><?= icon('pin') ?><div><h3><?= e($clinic['name']) ?></h3><p><?= e($clinic['address']) ?></p><?php if ($clinic['location_is_placeholder']): ?><small>Alamat lengkap akan diperbarui.</small><?php endif; ?></div></div>
-            <div><?= icon('clock') ?><div><h3>Jam operasional</h3><p><?= e($clinic['opening_hours']) ?></p><?php if ($clinic['location_is_placeholder']): ?><small>Jadwal sementara — konfirmasi melalui WhatsApp.</small><?php endif; ?></div></div>
-            <div><?= icon('chat') ?><div><h3>WhatsApp</h3><a href="https://wa.me/<?= e($clinic['whatsapp_number']) ?>" target="_blank" rel="noopener noreferrer"><?= e($clinic['whatsapp_display']) ?></a></div></div>
+    $mapUrl = $clinic['maps_fallback']; ?>
+    
+    <section class="section" id="lokasi">
+        <div class="container">
+            <?php section_heading(
+                'TEMUKAN KAMI',
+                'Lokasi Klinik Anshani',
+                'Kunjungi Klinik Anshani atau hubungi kami untuk reservasi dan konsultasi.'
+            ); ?>
+
+            <div class="location-info">
+
+                <div>
+                    <?= icon('chat') ?>
+                    <div>
+                        <h3>Reservasi & konsultasi</h3>
+                        <a href="https://wa.me/<?= e($clinic['whatsapp_number']) ?>?text=<?= urlencode('Halo Klinik Anshani, saya ingin konsultasi.') ?>"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            WhatsApp <?= e($clinic['whatsapp_display']) ?>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <?= icon('pin') ?>
+                    <div>
+                        <h3>Alamat klinik</h3>
+                        <a href="<?= e($clinic['maps_link']) ?>"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <?= e($clinic['address']) ?>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <?= icon('clock') ?>
+                    <div>
+                        <h3>Jam operasional</h3>
+                        <p><?= e(str_replace(' | ', ' · ', $clinic['opening_hours'])) ?></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <iframe
+                class="map-frame"
+                title="Google Maps - Lokasi Klinik Anshani"
+                src="<?= e($mapUrl) ?>"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="map-actions">
+                <span>Geser atau perbesar peta untuk melihat lokasi sekitar.</span>
+                <a class="button button-outline"
+                   href="<?= e($clinic['maps_link']) ?>"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Buka di Google Maps <?= icon('arrow') ?>
+                </a>
+            </div>
         </div>
-        <?php if ($isMapPlaceholder): ?><p class="map-note">Peta sementara menampilkan wilayah Indonesia, bukan titik lokasi klinik. Hubungi klinik untuk alamat kunjungan.</p><?php endif; ?>
-        <iframe class="map-frame" title="<?= $isMapPlaceholder ? 'Google Maps interaktif — peta sementara Indonesia' : 'Google Maps — lokasi Klinik Anshani' ?>" src="<?= e($mapUrl) ?>" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="map-actions"><span>Geser atau perbesar peta untuk menjelajah.</span><a class="button button-outline" href="<?= e($clinic['maps_link']) ?>" target="_blank" rel="noopener noreferrer">Buka di Google Maps <?= icon('arrow') ?></a></div>
-    </div></section>
+    </section>
+
 <?php }
 
 function render_cta(): void {

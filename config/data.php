@@ -5,15 +5,15 @@
 $clinic = [
     'name' => 'Klinik Anshani',
     'description' => 'Klinik Anshani menyediakan berbagai layanan pemeriksaan, konsultasi, dan pelayanan kesehatan dengan proses yang mudah dan nyaman.',
-    'whatsapp_display' => '083114969136',
-    'whatsapp_number' => '6283114969136',
-    'address' => 'Alamat Klinik Anshani',
-    'opening_hours' => 'Senin-Minggu | 08.00-21.00',
-    'location_is_placeholder' => true, // Ubah false setelah alamat dan jam dikonfirmasi.
-    'maps_embed' => 'GOOGLE_MAP_EMBED_URL', // Google Maps > Bagikan > Sematkan peta > salin nilai src.
-    'maps_link' => 'https://www.google.com/maps/search/?api=1&query=Klinik%20Anshani',
-    'maps_fallback' => 'https://maps.google.com/maps?q=Indonesia&z=5&output=embed',
-    'site_url' => '', // Contoh https://domain-anda.id (tanpa slash akhir); kosong di localhost.
+    'whatsapp_display' => '0889 0882 7788',
+    'whatsapp_number' => '6288908827788',
+    'address' => 'Jl. Raya Pondok Randu No. 6, RT 006 / RW 002, Cengkareng, Jakarta Barat',
+    'opening_hours' => 'Setiap hari | 07.00-21.00',
+    'location_is_placeholder' => false,
+    'maps_embed' => '',
+    'maps_link' => 'https://maps.app.goo.gl/e6kxHjYRAj5CeCGZ6',
+    'maps_fallback' => 'https://maps.google.com/maps?q=Jl.%20Raya%20Pondok%20Randu%20No.%206%2C%20Cengkareng%2C%20Jakarta%20Barat&z=16&output=embed',
+    'site_url' => '',
 ];
 
 $navigation = ['index.php' => 'Home', 'tentang.php' => 'Tentang', 'layanan.php' => 'Layanan', 'pricelist.php' => 'Pricelist', 'galeri.php' => 'Galeri', 'kontak.php' => 'Kontak'];
@@ -42,16 +42,26 @@ for ($i = 1; $i <= 4; $i++) {
 
 $categories = [
     'laboratorium' => ['name' => 'Laboratorium', 'icon' => 'lab', 'description' => 'Informasi pemeriksaan darah, tes narkoba, dan pemeriksaan laboratorium lainnya.', 'detail' => 'Tersedia pemeriksaan gula darah, asam urat, kolesterol, dan pilihan laboratorium lainnya. Hubungi klinik untuk persiapan pemeriksaan dan estimasi waktu hasil.'],
+
     'pemeriksaan-ims' => ['name' => 'Pemeriksaan IMS', 'icon' => 'shield', 'description' => 'Pilihan pemeriksaan IMS dengan perhatian pada kenyamanan dan privasi Anda.', 'detail' => 'Pilihan rapid test, paket STI, swab, dan pemeriksaan PCR. Konsultasikan jenis pemeriksaan serta jadwal yang sesuai dengan kebutuhan Anda.'],
+
     'pengobatan-ims' => ['name' => 'Pengobatan IMS', 'icon' => 'heart', 'description' => 'Konsultasi kebutuhan penanganan IMS bersama tenaga kesehatan.', 'detail' => 'Jenis tindakan ditentukan melalui pemeriksaan dan penilaian tenaga kesehatan. Pemilihan di website merupakan permintaan konsultasi, bukan resep atau persetujuan tindakan.'],
+
     'fisioterapi' => ['name' => 'Fisioterapi', 'icon' => 'activity', 'description' => 'Diskusikan kebutuhan layanan fisioterapi dan jadwal kunjungan.', 'detail' => 'Hubungi klinik untuk informasi sesi fisioterapi, penilaian awal, dan ketersediaan jadwal. Rencana pelayanan disesuaikan setelah konsultasi.'],
+
     'nebulizer' => ['name' => 'Nebulizer', 'icon' => 'air', 'description' => 'Informasi layanan nebulizer untuk anak dan dewasa.', 'detail' => 'Layanan nebulizer mengikuti hasil penilaian tenaga kesehatan. Konfirmasikan kebutuhan pemeriksaan dan jadwal sebelum datang.'],
+
     'sunat-modern' => ['name' => 'Sunat Modern', 'icon' => 'cross', 'description' => 'Informasi sunat modern untuk anak dan dewasa.', 'detail' => 'Konsultasikan metode, persiapan, biaya, serta perawatan setelah tindakan langsung dengan klinik. Jadwal dikonfirmasi melalui WhatsApp.'],
+
     'suntik-vitamin' => ['name' => 'Suntik Vitamin', 'icon' => 'drop', 'description' => 'Pilihan layanan vitamin sesuai penilaian tenaga kesehatan.', 'detail' => 'Tersedia informasi vitamin C dan vitamin B kompleks. Kesesuaian pemberian dan jenis vitamin dibahas saat konsultasi.'],
-    'infus-vitamin' => ['name' => 'Infus Vitamin', 'icon' => 'drop', 'description' => 'Informasi pilihan infus vitamin 100 ml dan 500 ml.', 'detail' => 'Lihat pilihan serta harga referensi di pricelist. Kebutuhan infus ditentukan tenaga kesehatan setelah pemeriksaan.'],
-    'infus-penyakit' => ['name' => 'Layanan Infus', 'icon' => 'heart', 'description' => 'Konsultasi layanan infus berdasarkan keluhan dan hasil pemeriksaan.', 'detail' => 'Nama paket mengikuti informasi pada website referensi. Tindakan dan biaya akhir dikonfirmasi setelah tenaga kesehatan menilai kondisi pasien.'],
-    'homecare' => ['name' => 'Homecare', 'icon' => 'home', 'description' => 'Tanyakan ketersediaan kunjungan rumah di area layanan klinik.', 'detail' => 'Referensi menyebut tambahan biaya Rp100.000 untuk area dekat klinik: Jakarta Barat, Karang Tengah, dan Cipondoh. Biaya ini di luar layanan utama; cakupan serta jadwal perlu dikonfirmasi.'],
-    'vaksinasi' => ['name' => 'Vaksinasi', 'icon' => 'shield', 'description' => 'Tanyakan informasi vaksin influenza, HPV, dan ketersediaannya.', 'detail' => 'Layanan vaksin disebutkan di website referensi tanpa rincian harga. Hubungi klinik untuk jenis vaksin, stok, syarat, jadwal, dan biaya terkini.'],
+
+    'infus-vitamin' => ['name' => 'Infus Vitamin', 'icon' => 'drop', 'description' => 'Informasi pilihan infus vitamin 100 ml dan 500 ml.', 'detail' => 'Lihat pilihan serta harga di pricelist. Kebutuhan infus ditentukan tenaga kesehatan setelah pemeriksaan.'],
+
+    'infus-penyakit' => ['name' => 'Layanan Infus', 'icon' => 'heart', 'description' => 'Konsultasi layanan infus berdasarkan keluhan dan hasil pemeriksaan.', 'detail' => 'Pilihan layanan infus disesuaikan dengan keluhan dan kondisi pasien. Tindakan serta biaya akhir dikonfirmasi setelah tenaga kesehatan melakukan penilaian.'],
+
+    'homecare' => ['name' => 'Homecare', 'icon' => 'home', 'description' => 'Tanyakan ketersediaan kunjungan rumah di area layanan klinik.', 'detail' => 'Tersedia layanan kunjungan rumah dengan tambahan biaya Rp100.000 untuk area dekat klinik seperti Jakarta Barat, Karang Tengah, dan Cipondoh. Biaya kunjungan di luar biaya layanan utama; cakupan area dan jadwal perlu dikonfirmasi terlebih dahulu.'],
+
+    'vaksinasi' => ['name' => 'Vaksinasi', 'icon' => 'shield', 'description' => 'Tanyakan informasi vaksin influenza, HPV, dan ketersediaannya.', 'detail' => 'Hubungi Klinik Anshani untuk mendapatkan informasi mengenai jenis vaksin, ketersediaan, persyaratan, jadwal, dan biaya terkini.'],
 ];
 
 // [id, nama, harga, catatan opsional]. Harga null = hubungi klinik, bukan gratis.
@@ -76,14 +86,14 @@ $priceGroups = [
         ['paket-4-sti', 'Paket 4 STI', 500000, 'HIV, sifilis, hepatitis B dan C'],
         ['rapid-gonore', 'Rapid Gonore', 300000],
         ['rapid-chlamydia', 'Rapid Chlamydia', 300000],
-        ['ibu-hamil', 'Paket Pemeriksaan Ibu Hamil', 150000, '7 parameter sesuai daftar referensi; konfirmasi rincian dengan klinik.'],
+        ['ibu-hamil', 'Paket Pemeriksaan Ibu Hamil', 150000, 'Paket pemeriksaan mencakup 7 parameter. Hubungi klinik untuk informasi rincian pemeriksaan.'],
         ['swab-vagina', 'Swab Vagina', 550000],
         ['pcr-hpv', 'PCR HPV', 800000, 'Vagina / uretra'],
         ['pcr-12', 'PCR Urin Uretra / Swab Vagina 12 Penyakit', 2400000],
         ['vdrl-express', 'VDRL Express', 440000, 'Estimasi hasil hari yang sama, konfirmasi klinik.'],
         ['vdrl', 'VDRL', 300000, 'Estimasi hasil 1-3 hari'],
         ['tpha', 'TPHA', 300000, 'Estimasi hasil 1-3 hari'],
-        ['pcr-hiv-rna', 'PCR HIV RNA', 1800000, 'Referensi menyebut hasil 12 jam; konfirmasi ketersediaan.'],
+        ['pcr-hiv-rna', 'PCR HIV RNA', 1800000, 'Estimasi hasil 12 jam. Konfirmasi jadwal dan ketersediaan layanan dengan klinik.'],
     ],
     'pengobatan-ims' => [
         ['suntik-gonore', 'Suntik Gonore', 400000], ['infus-gonore', 'Infus Gonore', 500000],
@@ -146,8 +156,3 @@ $advantages = [
     ['icon' => 'pin', 'title' => 'Lokasi Mudah Ditemukan', 'text' => 'Minta petunjuk lokasi langsung kepada klinik.'],
 ];
 $steps = ['Pilih layanan', 'Isi data', 'Lanjut ke WhatsApp', 'Konfirmasi jadwal', 'Datang ke Klinik Anshani'];
-// DUMMY: wajib diganti testimonial asli dengan izin pasien sebelum publikasi.
-$testimonials = [
-    ['name' => 'Pengunjung A (contoh)', 'quote' => 'Informasi layanan tersusun rapi sehingga mudah dipelajari.'],
-    ['name' => 'Pengunjung B (contoh)', 'quote' => 'Pilihan jadwal bisa ditanyakan terlebih dahulu melalui WhatsApp.'],
-];
