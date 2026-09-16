@@ -78,7 +78,13 @@ $categories = [
     'infus-penyakit' => ['name' => 'Layanan Infus', 'icon' => 'heart', 'description' => 'Konsultasi layanan infus berdasarkan keluhan dan hasil pemeriksaan.', 'detail' => 'Pilihan layanan infus disesuaikan dengan keluhan dan kondisi pasien. Tindakan serta biaya akhir dikonfirmasi setelah tenaga kesehatan melakukan penilaian.'],
 
     'homecare' => ['name' => 'Homecare', 'icon' => 'home', 'description' => 'Tanyakan ketersediaan kunjungan rumah di area layanan klinik.', 'detail' => 'Tersedia layanan kunjungan rumah dengan tambahan biaya Rp100.000 untuk area dekat klinik seperti Jakarta Barat, Karang Tengah, dan Cipondoh. Biaya kunjungan di luar biaya layanan utama; cakupan area dan jadwal perlu dikonfirmasi terlebih dahulu.'],
-
+	
+     'layanan-gizi' => [
+    'name' => 'Layanan Gizi',
+    'icon' => 'heart',
+    'description' => 'Konsultasi dan layanan gizi sesuai kebutuhan Anda.',
+    'detail' => 'Konsultasikan kebutuhan gizi dan pola makan bersama tenaga kesehatan untuk mendapatkan informasi layanan yang sesuai.'
+],
     'vaksinasi' => ['name' => 'Vaksinasi', 'icon' => 'shield', 'description' => 'Tanyakan informasi vaksin influenza, HPV, dan ketersediaannya.', 'detail' => 'Hubungi Klinik Anshani untuk mendapatkan informasi mengenai jenis vaksin, ketersediaan, persyaratan, jadwal, dan biaya terkini.'],
 ];
 
@@ -113,11 +119,16 @@ $priceGroups = [
         ['tpha', 'TPHA', 300000, 'Estimasi hasil 1-3 hari'],
         ['pcr-hiv-rna', 'PCR HIV RNA', 1800000, 'Estimasi hasil 12 jam. Konfirmasi jadwal dan ketersediaan layanan dengan klinik.'],
     ],
-    'pengobatan-ims' => [
-        ['suntik-gonore', 'Suntik Gonore', 400000], ['infus-gonore', 'Infus Gonore', 500000],
-        ['infus-chlamydia', 'Infus Chlamydia', 500000], ['suntik-sifilis', 'Suntik Sifilis', 500000],
-        ['infus-bakteri-vagina', 'Infus Bakteri Vagina', 500000], ['infus-jamur', 'Infus Jamur', 500000],
-    ],
+   'pengobatan-ims' => [
+    ['suntik-gonore', 'Suntik Gonore', 400000],
+    ['infus-gonore', 'Infus Gonore', 500000],
+    ['infus-chlamydia', 'Infus Chlamydia', 500000],
+    ['suntik-sifilis', 'Suntik Sifilis', 500000],
+    ['infus-bakteri-vagina', 'Infus Bakteri Vagina', 500000],
+    ['infus-jamur', 'Infus Jamur', 500000],
+    ['pep', 'PEP', 800000],
+    ['prep', 'PrEP', 800000],
+],
     'fisioterapi' => [['fisioterapi', 'Fisioterapi', 350000]],
     'nebulizer' => [['nebulizer', 'Nebulizer', 100000, 'Anak & dewasa']],
     'sunat-modern' => [['sunat-anak', 'Sunat Modern Anak', 1500000], ['sunat-dewasa', 'Sunat Modern Dewasa', 1700000]],
@@ -142,8 +153,14 @@ $priceGroups = [
         ['nyeri-kaki', 'Infus Nyeri Kaki', 308000],
     ],
     'homecare' => [['homecare', 'Tambahan Biaya Homecare', 100000, 'Di luar biaya layanan utama. Cakupan area dan jadwal dikonfirmasi klinik.']],
-    'vaksinasi' => [['vaksin-flu', 'Vaksin Influenza', null], ['vaksin-hpv', 'Vaksin HPV', null]],
+    'vaksinasi' => [
+    ['vaksin-flu-vaxigrip', 'Vaksin Flu Vaxigrip', 375000],
+    ['vaksin-hpv-gardasil-4', 'Vaksin HPV Gardasil 4', 1400000],
+    ['vaksin-hpv-gardasil-9', 'Vaksin HPV Gardasil 9', 2400000],
+],
 ];
+
+
 $infusionOptions = [
     ['c', 'Vitamin C 1000 mg', 170000, 240000],
     ['c-b3', 'Vitamin C + B Kompleks (B1, B6, B12)', 200000, 275000],
