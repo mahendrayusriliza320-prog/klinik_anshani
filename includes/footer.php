@@ -4,9 +4,9 @@
         <div>
     <a class="brand footer-brand footer-logo" href="index.php" aria-label="Klinik Anshani - Home">
         <img
-            src="assets/images/logo-klinik-anshani.png"
-            alt="Klinik Anshani"
-            class="footer-logo-image"
+    src="assets/images/logo-klinik-anshani-footer.png"
+    alt="Klinik Anshani"
+    class="footer-logo-image"
         >
     </a>
 

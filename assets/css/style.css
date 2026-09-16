@@ -477,7 +477,7 @@ dialog::backdrop { background:#102e29a6; backdrop-filter:blur(4px); }
 .footer-logo-image {
     display: block;
     width: auto;
-    height: 80px;
+    height: 96px;
     max-width: 330px;
     object-fit: contain;
 }
