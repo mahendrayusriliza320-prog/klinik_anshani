@@ -492,6 +492,7 @@ dialog::backdrop { background:#102e29a6; backdrop-filter:blur(4px); }
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     gap: 12px;
     margin-top: 16px;
 }
@@ -533,6 +534,7 @@ dialog::backdrop { background:#102e29a6; backdrop-filter:blur(4px); }
 .contact-social {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 12px;
     margin-top: 16px;
     margin-bottom: 16px;
