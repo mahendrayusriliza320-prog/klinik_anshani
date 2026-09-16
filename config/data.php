@@ -135,11 +135,11 @@ $priceGroups = [
     'nebulizer' => [['nebulizer', 'Nebulizer', 100000, 'Anak & dewasa']],
     'sunat-modern' => [['sunat-anak', 'Sunat Modern Anak', 1500000], ['sunat-dewasa', 'Sunat Modern Dewasa', 1700000]],
     'suntik-vitamin' => [
-        ['suntik-c', 'Suntik Vitamin C 1000 mg', 100000],
-        ['suntik-b3', 'Suntik B Kompleks - 3 Vitamin', 80000, 'B1, B6, B12'],
-        ['suntik-b6', 'Suntik B Kompleks - 6 Vitamin', 140000, 'B1, B2, B3, B5, B6, B12'],
-        ['suntik-c-b', 'Suntik Vitamin C 1000 mg + B Kompleks', 140000, 'B1, B6, B12'],
-    ],
+    ['suntik-c', 'Suntik Vitamin C 1000 mg', 100000],
+    ['suntik-c-niacin-b5', 'Suntik Vitamin C 1000 mg + Niacin + B5', 140000],
+    ['suntik-b3', 'Suntik B Kompleks - 3 Vitamin', 80000, 'B1, B6, B12'],
+    ['suntik-b6', 'Suntik B Kompleks - 6 Vitamin', 150000, 'B1, B2, B3, B5, B6, B12'],
+],
     'infus-vitamin' => [],
     'infus-penyakit' => [
         ['vertigo-1', 'Infus Vertigo - Tanpa Mual / Muntah', 400000],
@@ -165,12 +165,20 @@ $priceGroups = [
 
 $infusionOptions = [
     ['c', 'Vitamin C 1000 mg', 170000, 240000],
-    ['c-b3', 'Vitamin C + B Kompleks (B1, B6, B12)', 200000, 275000],
-    ['c-b2', 'Vitamin C + B Kompleks (B3, B5)', 200000, 275000],
-    ['c-b6', 'Vitamin C + B Kompleks (B1, B2, B3, B5, B6, B12)', 350000, 425000],
-    ['multivitamin', 'Vitamin A, B Kompleks, C, D, E, K', 500000, 575000],
+
+    ['c-niacin-b5', 'Vitamin C 1000 mg + Niacin + B5', 200000, 275000],
+
+    ['c-bkom-dpha', 'Vitamin C 1000 mg + B Kompleks + D-pha S. Fosfat', 350000, 425000],
+
+    ['c-bkom-adek', 'Vitamin C 1000 mg + B Kompleks + A.D.E.K', 500000, 575000],
+
+    ['b3', 'Vitamin B Kompleks B1, B6, B12', 170000, 240000],
+
+    ['b6', 'Vitamin B Kompleks B1, B2, B3, B5, B6, B12', 200000, 275000],
+
     ['fe', 'Fe Zat Besi', 400000, 475000],
-    ['fe-b', 'Fe Zat Besi + B Kompleks', 450000, 525000],
+
+    ['fe-b', 'Fe Zat Besi + All B Kompleks', 450000, 525000],
 ];
 foreach ([100 => 2, 500 => 3] as $volume => $column) {
     foreach ($infusionOptions as $option) {
