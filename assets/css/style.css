@@ -313,6 +313,36 @@ dialog::backdrop { background:#102e29a6; backdrop-filter:blur(4px); }
     .location-info { gap:24px; grid-template-columns:1fr 1fr; }
 }
 @media (max-width:680px) {
+    .hero-slide {
+    position: relative;
+    min-height: 0;
+    height: auto;
+}
+
+.hero-background {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    z-index: 0;
+}
+
+.hero-picture {
+    display: block;
+    width: 100%;
+    line-height: 0;
+}
+
+.hero-picture .hero-background {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero-layout {
+    display: none;
+}
     html { scroll-padding-top:90px; }
     .container { width:calc(100% - 40px); }
     .section { padding:56px 0; }
@@ -321,7 +351,11 @@ dialog::backdrop { background:#102e29a6; backdrop-filter:blur(4px); }
     .navbar { min-height:72px; }
     .brand { font-size:1.1rem; }
     .brand-mark { width:40px; height:40px; border-radius:10px; }
-    .hero-layout { display:block; min-height:0; padding-top:34px; padding-bottom:0; }
+    .hero-layout {
+    display: none !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+}
     .hero-copy h1,.hero-copy h2 { font-size:2.5rem; max-width:440px; margin-bottom:18px; }
     .hero-description { font-size:.9375rem; margin-bottom:22px; }
     .hero-note { font-size:.75rem; margin-top:18px; }

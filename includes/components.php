@@ -79,7 +79,7 @@ function render_gallery(): void {
 function render_videos(): void {
     global $videos; ?>
     <div class="video-grid"><?php foreach ($videos as $item): ?><article class="video-card">
-        <?php if (asset_exists($item['file'])): ?><video controls playsinline preload="none" poster="<?= e(photo_source($item['poster'])) ?>" aria-label="<?= e($item['title']) ?>"><source src="<?= e($item['file']) ?>" type="video/mp4">Browser Anda tidak mendukung video. <a href="<?= e($item['file']) ?>">Unduh video</a>.</video><?php else: ?><div class="video-placeholder"><?= icon('play') ?><span><?= e($item['title']) ?></span><small>Video akan segera tersedia</small></div><?php endif; ?><h3><?= e($item['title']) ?></h3>
+        <?php if (asset_exists($item['file'])): ?><video controls playsinline preload="none" poster="<?= e(photo_source($item['poster'])) ?>" aria-label="<?= e($item['title']) ?>"><source src="<?= e($item['file']) ?>" type="video/mp4">Browser Anda tidak mendukung video. <a href="<?= e($item['file']) ?>">Unduh video</a>.</video><?php else: ?><div class="video-placeholder"><?= icon('play') ?><span><?= e($item['title']) ?></span><small>Video akan segera tersedia</small></div><?php endif; ?>
     </article><?php endforeach; ?></div>
 <?php }
 

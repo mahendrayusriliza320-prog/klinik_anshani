@@ -26,9 +26,27 @@ $about = [
 ];
 
 $banners = [
-    ['title' => 'Kesehatan Anda, perhatian kami.', 'label' => 'Klinik Anshani', 'text' => 'Pelayanan kesehatan yang nyaman, profesional, dan terpercaya. Mulai dari pemeriksaan hingga konsultasi, kami siap membantu.', 'image' => 'assets/images/banners/banner-1.jpg'],
-    ['title' => 'Kenali kebutuhan kesehatan Anda.', 'label' => 'Layanan Pemeriksaan Kesehatan', 'text' => 'Pemeriksaan dan konsultasi dengan pelayanan yang nyaman. Temukan informasi layanan dan harga dalam satu tempat.', 'image' => 'assets/images/banners/banner-2.jpg'],
-    ['title' => 'Konsultasi jadi lebih mudah.', 'label' => 'Konsultasikan Kebutuhan Kesehatan Anda', 'text' => 'Hubungi Klinik Anshani untuk mendapatkan informasi layanan dan merencanakan kunjungan Anda.', 'image' => 'assets/images/banners/banner-3.jpg'],
+    [
+        'title' => 'Kesehatan Anda, perhatian kami.',
+        'label' => 'Klinik Anshani',
+        'text' => 'Pelayanan kesehatan yang nyaman, profesional, dan terpercaya. Mulai dari pemeriksaan hingga konsultasi, kami siap membantu.',
+        'image' => 'assets/images/banners/banner-1.jpg',
+        'mobile_image' => 'assets/images/banners/mobile/banner-1-mobile.jpg'
+    ],
+    [
+        'title' => 'Kenali kebutuhan kesehatan Anda.',
+        'label' => 'Layanan Pemeriksaan Kesehatan',
+        'text' => 'Pemeriksaan dan konsultasi dengan pelayanan yang nyaman. Temukan informasi layanan dan harga dalam satu tempat.',
+        'image' => 'assets/images/banners/banner-2.jpg',
+        'mobile_image' => 'assets/images/banners/mobile/banner-2-mobile.jpg'
+    ],
+    [
+        'title' => 'Konsultasi jadi lebih mudah.',
+        'label' => 'Konsultasikan Kebutuhan Kesehatan Anda',
+        'text' => 'Hubungi Klinik Anshani untuk mendapatkan informasi layanan dan merencanakan kunjungan Anda.',
+        'image' => 'assets/images/banners/banner-3.jpg',
+        'mobile_image' => 'assets/images/banners/mobile/banner-3-mobile.jpg'
+    ],
 ];
 
 $gallery = [];

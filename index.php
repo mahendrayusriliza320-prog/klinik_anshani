@@ -3,7 +3,23 @@
     <div class="hero-slides">
         <?php foreach ($banners as $i => $banner): ?>
         <article class="hero-slide" <?= $i ? 'hidden' : '' ?> aria-roledescription="slide" aria-label="<?= $i + 1 ?> dari 3">
-            <?php if (asset_exists($banner['image'])): ?><img class="hero-background" src="<?= e($banner['image']) ?>" alt="Banner Klinik Anshani <?= $i + 1 ?>" <?= $i ? 'loading="lazy"' : 'fetchpriority="high"' ?>><?php endif; ?>
+            <?php if (asset_exists($banner['image'])): ?>
+    <picture class="hero-picture">
+        <?php if (!empty($banner['mobile_image']) && asset_exists($banner['mobile_image'])): ?>
+            <source
+                media="(max-width: 768px)"
+                srcset="<?= e($banner['mobile_image']) ?>"
+            >
+        <?php endif; ?>
+
+        <img
+            class="hero-background"
+            src="<?= e($banner['image']) ?>"
+            alt="Banner Klinik Anshani <?= $i + 1 ?>"
+            <?= $i ? 'loading="lazy"' : 'fetchpriority="high"' ?>
+        >
+    </picture>
+<?php endif; ?>
             <div class="container hero-layout"><div class="hero-copy"><p class="eyebrow"><?= e($banner['label']) ?></p><?php $heading = $i === 0 ? 'h1' : 'h2'; ?><<?= $heading ?>><?= e($banner['title']) ?></<?= $heading ?>><p class="hero-description"><?= e($banner['text']) ?></p><div class="button-row"><button type="button" class="button" data-book>Daftar / Konsultasi <?= icon('arrow') ?></button><a class="button button-outline" href="layanan.php">Jelajahi Layanan</a></div><p class="hero-note"><?= icon('shield') ?>Nyaman berkonsultasi. Mudah merencanakan kunjungan.</p></div>
             <?php if (!asset_exists($banner['image'])): ?><div class="hero-placeholder" role="img" aria-label="Placeholder Banner Klinik <?= $i + 1 ?>"><div class="placeholder-top"><span>KLINIK ANSHANI</span><span>0<?= $i + 1 ?></span></div><div class="placeholder-center"><?= icon('photo') ?><p>Banner Klinik <?= $i + 1 ?></p><span>Ruang untuk foto klinik Anda</span></div><div class="placeholder-bottom"><span>PELAYANAN KESEHATAN</span><span>ANSHANI</span></div></div><?php endif; ?>
             </div>
