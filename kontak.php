@@ -34,7 +34,31 @@ page_intro(
                 <?= icon('chat') ?>
                 WhatsApp <?= e($clinic['whatsapp_display']) ?>
             </a>
+                        <div class="contact-social">
+                <a href="<?= e($clinic['instagram']) ?>"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram Klinik Anshani"
+                   title="Instagram @klinikanshani">
 
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1"></circle>
+                    </svg>
+                </a>
+
+                <a href="<?= e($clinic['tiktok']) ?>"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="TikTok Klinik Anshani"
+                   title="TikTok @klinikanshani">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 4v10.2a4.2 4.2 0 1 1-3.5-4.14v2.2a2.1 2.1 0 1 0 1.4 1.98V4h2.1c.3 2 1.6 3.5 3.9 3.8V10A6.5 6.5 0 0 1 14 8.5V4z"></path>
+                    </svg>
+                </a>
+            </div>
             <div class="notice">
                 <p>
                     Reservasi dan jadwal kunjungan akan dikonfirmasi

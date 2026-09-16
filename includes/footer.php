@@ -13,7 +13,48 @@
     <p>Pelayanan kesehatan yang mengutamakan kenyamanan, privasi, dan kemudahan akses.</p>
 </div>
         <nav aria-label="Menu cepat footer"><h2>Menu cepat</h2><ul><?php foreach ($navigation as $path => $label): ?><li><a href="<?= e($path) ?>"><?= e($label) ?></a></li><?php endforeach; ?></ul></nav>
-        <div><h2>Kontak</h2><p>Informasi layanan dan jadwal kunjungan</p><a class="footer-wa" href="https://wa.me/<?= e($clinic['whatsapp_number']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('chat') ?><span>WhatsApp<strong><?= e($clinic['whatsapp_display']) ?></strong></span><?= icon('arrow') ?></a></div>
+        <div>
+    <h2>Kontak</h2>
+    <p>Informasi layanan dan jadwal kunjungan</p>
+
+    <a class="footer-wa"
+       href="https://wa.me/<?= e($clinic['whatsapp_number']) ?>"
+       target="_blank"
+       rel="noopener noreferrer">
+        <?= icon('chat') ?>
+        <span>
+            WhatsApp
+            <strong><?= e($clinic['whatsapp_display']) ?></strong>
+        </span>
+        <?= icon('arrow') ?>
+    </a>
+
+    <div class="footer-social">
+    <a href="<?= e($clinic['instagram']) ?>"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Instagram Klinik Anshani"
+       title="Instagram @klinikanshani">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1"></circle>
+        </svg>
+    </a>
+
+    <a href="<?= e($clinic['tiktok']) ?>"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TikTok Klinik Anshani"
+       title="TikTok @klinikanshani">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 4v10.2a4.2 4.2 0 1 1-3.5-4.14v2.2a2.1 2.1 0 1 0 1.4 1.98V4h2.1c.3 2 1.6 3.5 3.9 3.8V10A6.5 6.5 0 0 1 14 8.5V4z"></path>
+        </svg>
+    </a>
+</div>
+</div>
     </div>
     <div class="footer-bottom"><p>© <?= date('Y') ?> Yusril Iza Mahendra Hasibuan. All rights reserved.</p><a href="#main">Kembali ke atas ↑</a></div>
 </div></footer>
